@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- dans ce fichier, on va demander à Spring de créer au démarrage de l'application, un objet de la classe DaoImpl -->
+
+<bean id="d" class="dao.DaoImpl2"></bean>
+<bean id="metier" class="metier.MetierImpl">
+  <property name="dao" ref="d"></property> <!-- Injection des dépendances -->
+</bean>
+
+</beans>
